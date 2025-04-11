@@ -16,42 +16,29 @@
         <!-- dodati obilježja za ARIA-->
         <button class="menubtn">Menu</button>
         <ul class="menu-items">
-            <!-- dodati da je navigacija lijevo poravnata i da je skrivena
-									
-					LV1: bez upotrebe javascripta -->
             <li><a href="index.html">Pocetna</a></li>
             <li><a href="grafikon.html">Grafikon</a></li>
-            <li><a href="slike.html">Slike</a></li>
+            <li><a href="/slike">Slike</a></li>
         </ul>
     </nav>
 
-
-
     <h1>Galerija slika</h1>
     <section class="img-gallery-magnific">
-        <!-- putanja (href) u tagu a je drugačija kad se koristi lightbox od onoga kada želimo da se 
-					 otvori u novom tabu -->
-        <% images.forEach(image=> { %>
-            <figure>
-                <a href="<%= image.full %>">
-                    <img src="<%= image.thumbnail %>" alt="<%= image.alt %>">
-                </a>
-                <figcaption>
-                    <%= image.alt %>
-                </figcaption>
-            </figure>
-            <% }); %>
-
         <% images.forEach(image => { %>
-                <figure>
-                  <a href="<%= image.full %>">
-                    <img src="<%= image.thumbnail %>" alt="<%= image.alt %>">
-                  </a>
-                  <figcaption><%= image.alt %></figcaption>
-                </figure>
-              <% }); %>
+          <figure>
+            <a href="#<%= image.id %>">
+              <img src="<%= image.url %>" alt="<%= image.title %>">
+            </a>
+            <figcaption><%= image.title %></figcaption>
+          </figure>
+          
+          <a href="#" id="<%= image.id %>" class="lightbox">
+            <img src="<%= image.url %>" alt="<%= image.title %>">
+            <span class="close">×</span>
+          </a>
+        <% }) %>
+      </section>
 
-    </section>
 </body>
 
 </html>
