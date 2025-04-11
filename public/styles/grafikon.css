@@ -1,0 +1,120 @@
+.chart-section {
+    padding: 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chart-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.histogram {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 300px;
+    max-width: 50%;
+    margin: 0 auto;
+    border-left: 2px solid #333;
+    border-bottom: 2px solid #333;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.histogram .bar {
+    flex: 1; 
+    margin: 0; 
+    background-color: #3498db;
+    border-radius: 0; 
+    position: relative;
+    transition: transform 0.3s ease;
+
+}
+
+.histogram .bar::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.histogram .bar:hover::after {
+    opacity: 1;
+
+}
+
+.histogram .bar:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.pie-chart {
+    display: none;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(
+        rgb(57, 25, 25) 0% 35%,  /* Industrija */
+        #626563 35% 70%,  /* Kućanstva */
+        #96c2f8 70% 100%  /* Transport */
+    );
+    margin: 0 auto;
+}
+
+.legend {
+    position: relative;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #333;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.legend-color {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid #333;
+}
+
+
+@media (max-width: 728px) {
+    .histogram{
+        display: none;
+    }
+
+    .pie-chart{
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+}

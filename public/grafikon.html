@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles\grafikon.css">
+    <link rel="stylesheet" href="styles\style.css">
+    <title>Document</title>
+</head>
+<body>
+  
+    <h1 class="tittle-grafikon">Grafikon testiranih podrucja</h1>
+   
+
+    <nav class="menu" aria-labelledby="primarna-navigacija">
+		<!-- dodati obilježja za ARIA-->
+		<button class="menubtn">Menu</button>
+		<ul class="menu-items">
+			<!-- dodati da je navigacija lijevo poravnata i da je skrivena
+									
+					LV1: bez upotrebe javascripta -->
+			<li><a href="index.html">Pocetna</a></li>
+			<li><a href="grafikon.html">Grafikon</a></li>
+			<li><a href="slike.html">Slike</a></li>
+		</ul>
+	</nav>
+
+    <section class="chart-section">
+        <h2>Number of places tested for data</h2>
+        <div class="histogram">
+            <div class="bar" style="height: 35%; background-color: rgb(57, 25, 25);" title="Inland 6"></div>
+            <div class="bar" style="height: 35%; background-color: #626563;" title="Mountain 6"></div>
+            <div class="bar" style="height: 30%; background-color: #96c2f8;" title="Coastal 5"></div>
+        </div>
+
+        <div class="pie-chart"> </div>
+        <div class="legend">
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: rgb(57, 25, 25);"></span>
+                Inland 6
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #626563;"></span>
+                Mountain 6
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #96c2f8;"></span>
+                Coastal 5
+            </div>
+        </div>
+    
+    </section>
+
+
+
+    
+</body>
+</html>
