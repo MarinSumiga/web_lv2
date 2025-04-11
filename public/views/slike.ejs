@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/style_slike.css" />
-    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/web_lv2/public/styles/style_slike.css" />
+    <link rel="stylesheet" href="/web_lv2/public/styles/style.css" />
     <title>Document</title>
 </head>
 
@@ -31,25 +31,15 @@
     <section class="img-gallery-magnific">
         <!-- putanja (href) u tagu a je drugačija kad se koristi lightbox od onoga kada želimo da se 
 					 otvori u novom tabu -->
-        <% images.forEach(image=> { %>
-            <figure>
-                <a href="<%= image.full %>">
-                    <img src="<%= image.thumbnail %>" alt="<%= image.alt %>">
-                </a>
-                <figcaption>
-                    <%= image.alt %>
-                </figcaption>
-            </figure>
-            <% }); %>
 
-        <% images.forEach(image => { %>
-                <figure>
-                  <a href="<%= image.full %>">
-                    <img src="<%= image.thumbnail %>" alt="<%= image.alt %>">
-                  </a>
-                  <figcaption><%= image.alt %></figcaption>
-                </figure>
-              <% }); %>
+                    <% images.forEach(image => { %>
+                        <figure>
+                            <a href="<%= image.url %>">
+                                <img src="<%= image.url %>" alt="<%= image.title %>">
+                            </a>
+                            <figcaption><%= image.title %></figcaption>
+                        </figure>
+                    <% }); %>
 
     </section>
 </body>
